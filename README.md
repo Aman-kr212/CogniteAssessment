@@ -1,4 +1,3 @@
-
 # Messenger App
 
 This is a basic messenger app built with React and TypeScript. It allows users to select friends, send messages, and view chat history (without persistence).
@@ -22,16 +21,19 @@ This is a basic messenger app built with React and TypeScript. It allows users t
 ## Installation
 
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/Aman-kr212/CogniteAssessment.git
    ```
 
 2. Navigate into the project folder:
+
    ```bash
    cd messenger-app
    ```
 
 3. Install the dependencies:
+
    ```bash
    npm install
    ```
