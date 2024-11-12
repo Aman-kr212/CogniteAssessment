@@ -11,16 +11,26 @@ export const Chat: React.FC<IChatProps> = (props: IChatProps) => {
         <p>{NO_MESSAGE_FOUND}</p>
       ) : (
         <div className="chat-window">
-          {props.messages.map((msg: Message) => (
-            <div key={msg.id} className="message">
-              <span className="content">{msg.content}</span>
-              <span className="timestamp">{msg.time.toLocaleTimeString()}</span>
-            </div>
-          ))}
+          {props.messages.map((msg: Message) => {
+            return (
+              !msg.isDraft && (
+                <div key={msg.id} className="message">
+                  <span className="content">{msg.content}</span>
+                  <span className="timestamp">
+                    {msg.time.toLocaleTimeString()}
+                  </span>
+                </div>
+              )
+            );
+          })}
         </div>
       )}
 
-      <MessageInput onSend={props.onMessageUpdate} />
+      <MessageInput
+        onSend={props.onMessageUpdate}
+        onDraftMessageUpdate={props.onDraftMessageUpdate}
+        draftMessage={props.draftMessage}
+      />
     </>
   );
 };
